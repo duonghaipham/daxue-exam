@@ -18,3 +18,17 @@ window.addEventListener('click', event => {
       dropdown.classList.remove('w3-show');
   }
 });
+
+document.getElementById('btn-menu').addEventListener('click', event => {
+  const navRight = document.getElementsByClassName('nav-right')[0];
+  const icon = event.currentTarget.firstElementChild;
+
+  if (navRight.classList.contains('show')) {
+    navRight.classList.remove('show');
+    icon.innerHTML = '&#xf0c9;'
+  }
+  else {
+    navRight.classList.add('show');
+    icon.innerHTML = '&#xf00d;';
+  }
+});
