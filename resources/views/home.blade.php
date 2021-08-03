@@ -11,10 +11,10 @@
   <title>Luyện thi xã hội</title>
 </head>
 <body>
-  @include('includes.navbar');
-  <div>Disparity</div>
-  @include('includes.footer');
-
+  @include('includes.navbar')
+  @include('user.cta')
+  @include('subject.subjects')
+  @include('includes.footer')
   <script src={{ mix('js/app.js') }} type="text/javascript"></script>
 </body>
 </html>
