@@ -1,0 +1,53 @@
+.decoration {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+
+    blockquote {
+      color: #fff;
+      font-family: "Roboto", sans-serif;
+      opacity: 0.95;
+
+      .content {
+        margin-bottom: 15px;
+        font-style: italic;
+        font-size: 26px;
+        letter-spacing: 1.5px;
+      }
+
+      .author {
+        font-weight: 400;
+        text-align: right;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .decoration {
+    img {
+      height: 90vh;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+
+  .overlay {
+    blockquote {
+      width: 80%;
+    }
+  }
+}

@@ -113,15 +113,17 @@
       padding: 15px 20px;
       box-shadow: 3px 3px 3px 0 rgb(0, 0, 0, 0.2);
 
-      h3 {
+      > a {
         margin-top: 0;
         color: #689f59;
         font-weight: 500;
       }
 
-      a {
-        color: #ff6842;
-        font-weight: 500;
+      p {
+        a {
+          color: #ff6842;
+          font-weight: 500;
+        }
       }
     }
   }
