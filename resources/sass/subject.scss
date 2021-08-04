@@ -36,6 +36,114 @@
   }
 }
 
+.subject-content {
+  .subjects-container {
+    width: 1000px;
+    margin: 0 auto;
+
+    h1 {
+      color: #0e76bc;
+      font-weight: 500;
+    }
+
+    .accordion {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .btn-accordion {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 15px;
+        background-color: #0e76bc;
+        color: #fff;
+        cursor: pointer;
+        text-align: left;
+
+        i {
+          float: right;
+
+          &::after {
+            content: '\f0d9';
+            font-weight: bold;
+          }
+        }
+      }
+
+      .active {
+        i {
+          &::after {
+            content: "\f0d7";
+          }
+        }
+      }
+
+      .panel {
+        max-height: 0;
+        padding-left: 50px;
+        overflow: hidden;
+        transition: max-height 0.15s ease-out;
+
+        .panel-item {
+          border-bottom: 1px #ccc solid;
+          padding: 20px 0 15px;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .panel-head {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+
+              .icon {
+                position: absolute;
+                top: 5px;
+                left: -30px;
+                color: #88b77b;
+              }
+
+              a {
+                color: #f60;
+                font-size: 22px;
+              }
+
+            .btn-item-info {
+              height: fit-content;
+              margin: 5px 0 0 10px;
+              color: #6ea2c9;
+              cursor: pointer;
+            }
+          }
+
+          .panel-detail {
+            max-height: 0;
+            margin-top: 10px;
+            font-size: 15px;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+
+            .item-detail {
+              font-size: 18px;
+
+              span {
+                margin-left: 15px;
+                color: #f60;
+                font-size: inherit;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .decoration {
     img {
@@ -48,6 +156,12 @@
   .overlay {
     blockquote {
       width: 80%;
+    }
+  }
+
+  .subject-content {
+    .subjects-container {
+      width: 90%;
     }
   }
 }

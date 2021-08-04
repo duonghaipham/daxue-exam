@@ -2,11 +2,7 @@ require('./bootstrap');
 
 // Click on personal button
 document.getElementById('btn-personal').addEventListener('click', (e) => {
-  const personalList = document.getElementById('personal-list');
-  if (personalList.classList.contains('w3-show'))
-    personalList.classList.remove('w3-show');
-  else
-    personalList.classList.add('w3-show');
+  document.getElementById('personal-list').classList.toggle('w3-show');
 });
 
 // Click outside the personal dropdown
@@ -32,3 +28,35 @@ document.getElementById('btn-menu').addEventListener('click', event => {
     icon.innerHTML = '&#xf00d;';
   }
 });
+
+// Click on exam button
+const listBtnAccordions = document.getElementsByClassName('btn-accordion');
+for (const btnAccordion of listBtnAccordions) {
+  btnAccordion.addEventListener('click', (event) => {
+    btnAccordion.classList.toggle('active');
+    const panel = btnAccordion.nextElementSibling;
+    if (panel.style.maxHeight)
+      panel.style.maxHeight = null;
+    else
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+  });
+}
+
+// Click on info button
+const listBtnItemInfos = document.getElementsByClassName('btn-item-info');
+for (const itemInfo of listBtnItemInfos) {
+  itemInfo.addEventListener('click', event => {
+    const detail = itemInfo.parentElement.nextElementSibling;
+    if (detail.style.maxHeight) {
+      detail.style.maxHeight = null;
+      // detail.style.marginTop = '0px';
+    }
+    else {
+      const scrollHeight = detail.scrollHeight;
+      const panel = detail.parentElement.parentElement;
+      // detail.style.marginTop = '10px';
+      detail.style.maxHeight = scrollHeight + 'px';
+      panel.style.maxHeight = parseInt(panel.style.maxHeight) + scrollHeight + 'px';
+    }
+  });
+}
