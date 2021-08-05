@@ -1,8 +1,10 @@
 .decoration {
   position: relative;
+  margin-bottom: 15px;
 
   img {
     width: 100%;
+    vertical-align: middle;
   }
 
   .overlay {
@@ -41,9 +43,91 @@
     width: 1000px;
     margin: 0 auto;
 
-    h1 {
+    .subject-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
       color: #0e76bc;
-      font-weight: 500;
+
+      h1 {
+        font-weight: 600;
+      }
+
+      .filter {
+        position: relative;
+
+        #btn-filter {
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.1);
+            transition-duration: 500ms;
+          }
+        }
+
+        .filter-overlay {
+          position: absolute;
+          right: 0;
+          display: none;
+          z-index: 1000;
+
+          .filter-content {
+            border-radius: 3px;
+            padding: 15px;
+            background-color: #fff;
+            box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.25);
+
+            .filter-head {
+              margin-bottom: 7px;
+              font-weight: 500;
+              text-align: center;
+            }
+
+            .filter-typing {
+              display: grid;
+              grid-template-columns: max-content 175px;
+              grid-template-rows: repeat(3, 1fr);
+              grid-gap: 10px 5px;
+              align-items: center;
+
+              label {
+                color: #001a33;
+                font-size: 15px;
+              }
+
+              input {
+                border-bottom: 1.5px #777 solid;
+                padding: 3px 7px;
+                font-size: 15px;
+
+                &:focus {
+                  border-bottom: 2px #0e76bc solid;
+                }
+
+                &::placeholder {
+                  color: #aaa;
+                }
+              }
+            }
+
+            #btn-filter-ok {
+              display: block;
+              margin: 7px 0 0 auto;
+              border-radius: 3px;
+              padding: 7px 20px;
+              background-color: #0e76bc;
+              color: #fff;
+              cursor: pointer;
+              font-size: 15px;
+            }
+          }
+        }
+
+        .show {
+          display: block;
+        }
+      }
     }
 
     .accordion {
@@ -62,6 +146,7 @@
         background-color: #0e76bc;
         color: #fff;
         cursor: pointer;
+        font-size: 20px;
         text-align: left;
 
         i {
@@ -162,6 +247,29 @@
   .subject-content {
     .subjects-container {
       width: 90%;
+
+      .subject-head {
+        .filter {
+          .filter-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+
+            .filter-content {
+              width: max-content;
+            }
+          }
+
+          .show {
+            display: flex;
+          }
+        }
+      }
     }
   }
 }

@@ -7,7 +7,6 @@
 }
 
 .nav {
-  //margin-bottom: 15px;
   background-color: #0e76bc;
   color: #fff;
   overflow: visible;
@@ -29,6 +28,7 @@
 
       .nav-item {
         padding: 15px 20px;
+        color: #fff;
 
         &:hover {
           background-color: #3d9fe2;
@@ -50,14 +50,23 @@
           cursor: pointer;
         }
 
-        #personal-list {
+        .personal-list {
           position: absolute;
           right: 0;
-          border: 1px #ccc solid;
+          width: max-content;
+          max-height: 0;
+          overflow: hidden;
           border-radius: 3px;
+          background-color: #fff;
           color: #111;
+          transition: max-height 0.1s ease-out;
+          z-index: 1;
 
           .personal-item {
+            display: block;
+            padding: 5px 10px;
+            font-size: 18px;
+
             &:hover {
               background-color: #3d9fe2;
               color: #fff;
@@ -110,6 +119,7 @@
         .vertical {
           a {
             i {
+              color: #fff;
               font-size: 30px;
             }
 
@@ -173,15 +183,17 @@
         .nav-btn-item {
           border-top: 1px rgba(255, 255, 255, 0.25) solid;
 
-          #personal-list {
+          .personal-list {
             position: static;
+            width: 100%;
             border: none;
             border-radius: 0;
             background-color: #1483cd;
-            color: #fff;
 
             .personal-item {
-              padding-left: 40px;
+              border-bottom: 1px rgba(255, 255, 255, 0.25) solid;;
+              padding: 10px 40px;
+              color: #fff;
             }
           }
 
