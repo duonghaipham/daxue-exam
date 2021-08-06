@@ -1,0 +1,135 @@
+.exam-status {
+  margin-top: 15px;
+
+  .exam-status-container {
+    width: 1000px;
+    margin: 0 auto;
+
+    .frame {
+      h1 {
+        margin-bottom: 10px;
+        color: #0e76bc;
+        font-weight: 500;
+      }
+    }
+
+    .status {
+      margin-bottom: 15px;
+
+      .breadcrumb {
+        border: 1px #ccc solid;
+        padding: 10px;
+
+        .breadcrumb-item {
+          display: inline;
+
+          a {
+            color: #ff6842;
+          }
+        }
+
+        .breadcrumb-item + .breadcrumb-item::before {
+          content: '/\00a0';
+        }
+      }
+    }
+
+    .manipulation {
+      .list {
+        .item {
+          margin-bottom: 7px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .label {
+            font-weight: 600;
+          }
+        }
+      }
+
+      .info {
+        margin-bottom: 15px;
+        border: 1px #ccc solid;
+        padding: 7px;
+      }
+
+      .description {
+        margin-bottom: 15px;
+      }
+
+      .essential-info {
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .table-state {
+        width: 100%;
+        margin-bottom: 15px;
+        border-collapse: collapse;
+
+        tr {
+          &:first-child {
+            background-color: #0e76bc;
+            color: #fff;
+          }
+
+          th {
+            padding: 5px 0;
+            font-weight: 500;
+          }
+
+          td {
+            padding: 5px 0;
+            background-color: #f4f4f4;
+            text-align: center;
+
+            &:first-child {
+              padding: 5px;
+              text-align: left;
+            }
+
+            .state {
+              font-weight: 500;
+            }
+
+            .submitted {
+              font-size: 16px;
+            }
+
+            a {
+              color: #ff6842;
+            }
+          }
+        }
+      }
+
+      .btn-retry {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background-color: #0e76bc;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .exam-status {
+    .exam-status-container {
+      width: 90%;
+
+      .frame {
+        border-style: none;
+        padding: 0;
+
+        .breadcrumb {
+          border: 1px #ccc solid;
+        }
+      }
+    }
+  }
+}

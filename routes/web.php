@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::view('/subject', 'subject');
+
+Route::view('/status', 'status');
