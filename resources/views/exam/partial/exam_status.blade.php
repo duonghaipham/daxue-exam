@@ -1,14 +1,6 @@
 <div class="exam-status">
   <div class="exam-status-container">
-    <div class="status frame">
-      <h1>Lịch sử</h1>
-      <ul class="breadcrumb">
-        <li class="breadcrumb-item">Môn học</li>
-        <li class="breadcrumb-item"><a href="/subject">Lịch sử</a></li>
-        <li class="breadcrumb-item">Đề thi</li>
-        <li class="breadcrumb-item">Đề thi thử lịch sử THPT Lấp Vò 3 - Đồng Tháp</li>
-      </ul>
-    </div>
+    @include('includes.breadcrumb')
     <div class="manipulation frame">
       <h1>Đề thi lịch sử THPT Lấp Vò 3 - Đồng Tháp</h1>
       <ul class="info list">

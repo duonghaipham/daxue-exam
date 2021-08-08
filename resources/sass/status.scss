@@ -5,36 +5,13 @@
     width: 1000px;
     margin: 0 auto;
 
-    .frame {
+    .manipulation {
       h1 {
         margin-bottom: 10px;
         color: #0e76bc;
         font-weight: 500;
       }
-    }
 
-    .status {
-      margin-bottom: 15px;
-
-      .breadcrumb {
-        border: 1px #ccc solid;
-        padding: 10px;
-
-        .breadcrumb-item {
-          display: inline;
-
-          a {
-            color: #ff6842;
-          }
-        }
-
-        .breadcrumb-item + .breadcrumb-item::before {
-          content: '/\00a0';
-        }
-      }
-    }
-
-    .manipulation {
       .list {
         .item {
           margin-bottom: 7px;
@@ -125,10 +102,6 @@
       .frame {
         border-style: none;
         padding: 0;
-
-        .breadcrumb {
-          border: 1px #ccc solid;
-        }
       }
     }
   }

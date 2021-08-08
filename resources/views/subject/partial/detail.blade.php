@@ -35,7 +35,7 @@
         <li class="panel-item">
           <div class="panel-head">
             <i class="icon far fa-file-alt"></i>
-            <a href="/status" class="name-topic">Đề thi thử lịch sử THPT Lấp Vò 3 - tỉnh Đồng Tháp</a>
+            <a href="/exam/view" class="name-topic">Đề thi thử lịch sử THPT Lấp Vò 3 - tỉnh Đồng Tháp</a>
             <i class="btn-item-info far fa-question-circle"></i>
           </div>
           <ul class="panel-detail">

@@ -78,6 +78,33 @@
   }
 }
 
+.status {
+  margin-bottom: 15px;
+
+  h1 {
+    margin-bottom: 10px;
+    color: #0e76bc;
+    font-weight: 500;
+  }
+
+  .breadcrumb {
+    border: 1px #ccc solid;
+    padding: 10px;
+
+    .breadcrumb-item {
+      display: inline;
+
+      a {
+        color: #ff6842;
+      }
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+      content: '/\00a0';
+    }
+  }
+}
+
 .footer {
   margin-top: 15px;
 

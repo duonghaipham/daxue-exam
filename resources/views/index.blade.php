@@ -10,7 +10,8 @@
 </head>
 <body>
   @include('includes.navbar')
-  @include('subject.detail')
+  @include('includes.cta')
+  @include('includes.nav_subjects')
   @include('includes.footer')
   <script src={{ mix('js/app.js') }} type="text/javascript"></script>
 </body>
