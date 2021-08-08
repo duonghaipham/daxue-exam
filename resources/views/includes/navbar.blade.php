@@ -13,7 +13,7 @@
         <div class="personal-list">
           <a class="personal-item" href="#">Thống kê</a>
           <a class="personal-item" href="#">Quản lý cá nhân</a>
-          <a class="personal-item" href="#">Đổi mật khẩu</a>
+          <a class="personal-item" href="/password/change">Đổi mật khẩu</a>
           <a class="personal-item" href="#">Đăng xuất</a>
         </div>
       </div>

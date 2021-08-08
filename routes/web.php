@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::view('/subject/view', 'subject.view');
 
 Route::view('/exam/view', 'exam.view');
+
+Route::view('/password/change', 'auth.change');
