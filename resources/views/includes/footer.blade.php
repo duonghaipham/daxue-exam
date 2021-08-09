@@ -1,25 +1,20 @@
 <div class="footer">
-  <div class="about">
-    <div class="about-container wrapper">
-      <div class="brand">
-        <img src="{{ url("svg/pencil.svg") }}" alt="Logo" class="logo" />
-        <h3>Daxue - Luyện thi xã hội</h3>
-      </div>
-      <div class="contact">
-        <h3>Liên hệ</h3>
-        <ul class="horizontal">
-          <li><i class="fas fa-phone-alt"></i>0907665xxx</li>
-          <li><i class="fas fa-reply"></i>haiduongzzz123@gmail.com</li>
-        </ul>
-        <div class="vertical">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
+  <div class="footer-container">
+    <div class="contact">
+      <a href="https://www.facebook.com/duong.tyler"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="https://github.com/phduong2001"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/phduong2001"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.instagram.com/phduong2001"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:haiduongzzz123@gmail.com"><i class="fas fa-envelope-open"></i></a>
     </div>
-  </div>
-  <div class="copyright">
-    <p>&copy; 2021 - Daxue</p>
-    <p>Phát triển bởi Tyler</p>
+    <div class="info">
+      <a href="#">Privacy and Security</a>
+      <a href="#">Terms of Use</a>
+    </div>
+    <div class="copyright">
+      <p>Copyright &copy; 2021 Daxue</p>
+      <p>Developed by Tyler</p>
+    </div>
   </div>
 </div>
