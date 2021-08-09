@@ -1,6 +1,6 @@
 <div class="exam-status">
   <div class="exam-status-container">
-    @include('includes.breadcrumb')
+    @include('exam.partial.breadcrumb')
     <div class="manipulation frame">
       <h1>Đề thi lịch sử THPT Lấp Vò 3 - Đồng Tháp</h1>
       <ul class="info list">
@@ -29,7 +29,7 @@
           <td><a href="#">23</a>/40</td>
         </tr>
       </table>
-      <a href="#" class="btn-retry">Làm lại</a>
+      <a href="/exam/take" class="btn-retry">Làm lại</a>
     </div>
   </div>
 </div>
