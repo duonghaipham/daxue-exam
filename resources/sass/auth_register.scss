@@ -1,0 +1,16 @@
+.register {
+  margin: 75px 0;
+
+  .register-container {
+    width: 720px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .register {
+    .register-container {
+      width: 90%;
+    }
+  }
+}

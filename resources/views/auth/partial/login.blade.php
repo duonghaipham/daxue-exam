@@ -7,7 +7,7 @@
         <label for="username">Tên đăng nhập</label>
         <div class="input">
           <i class="fas fa-user"></i>
-          <input type="password" name="current_password" id="username"/>
+          <input type="text" name="username" id="username"/>
         </div>
       </div>
       <div class="item">

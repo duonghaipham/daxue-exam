@@ -24,3 +24,5 @@ Route::view('/exam/view', 'exam.view');
 Route::view('/password/change', 'auth.change');
 
 Route::view('/login', 'auth.login');
+
+Route::view('/register', 'auth.register');

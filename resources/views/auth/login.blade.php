@@ -6,7 +6,7 @@
   <!-- Font awesome 5 icon -->
   <script src="https://kit.fontawesome.com/d3981548c2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href={{ mix("css/app.css") }} />
-  <title>Luyện thi xã hội</title>
+  <title>Đăng nhập</title>
 </head>
 <body>
   @include('includes.navbar')

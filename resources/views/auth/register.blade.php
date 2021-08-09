@@ -6,11 +6,11 @@
   <!-- Font awesome 5 icon -->
   <script src="https://kit.fontawesome.com/d3981548c2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href={{ mix("css/app.css") }} />
-  <title>Đổi mật khẩu</title>
+  <title>Đăng ký</title>
 </head>
 <body>
   @include('includes.navbar')
-  @include('auth.partial.password_changing')
+  @include('auth.partial.register')
   @include('includes.footer')
   <script src={{ mix('js/app.js') }} type="text/javascript"></script>
 </body>
