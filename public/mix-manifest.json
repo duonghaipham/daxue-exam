@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/js/subject_view.js": "/js/subject_view.js",
     "/js/exam_take.js": "/js/exam_take.js",
+    "/js/auth_view.js": "/js/auth_view.js",
     "/css/auth_register.css": "/css/auth_register.css",
     "/css/auth_login.css": "/css/auth_login.css",
     "/css/auth_change.css": "/css/auth_change.css",
@@ -9,5 +10,6 @@
     "/css/app.css": "/css/app.css",
     "/css/subject_view.css": "/css/subject_view.css",
     "/css/exam_view.css": "/css/exam_view.css",
-    "/css/exam_take.css": "/css/exam_take.css"
+    "/css/exam_take.css": "/css/exam_take.css",
+    "/css/auth_view.css": "/css/auth_view.css"
 }

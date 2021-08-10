@@ -12,7 +12,7 @@
         <a id="btn-personal"><i class="fas fa-user"></i></a>
         <div class="personal-list">
           <a class="personal-item" href="#">Thống kê</a>
-          <a class="personal-item" href="#">Quản lý cá nhân</a>
+          <a class="personal-item" href="/user">Quản lý cá nhân</a>
           <a class="personal-item" href="/password/change">Đổi mật khẩu</a>
           <a class="personal-item" href="#">Đăng xuất</a>
         </div>

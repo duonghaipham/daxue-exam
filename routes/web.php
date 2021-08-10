@@ -28,3 +28,7 @@ Route::view('/login', 'auth.login');
 Route::view('/register', 'auth.register');
 
 Route::view('/exam/take', 'exam.take');
+
+Route::view('/user', 'auth.view');
+
+Route::view('user/update', 'auth.update');
