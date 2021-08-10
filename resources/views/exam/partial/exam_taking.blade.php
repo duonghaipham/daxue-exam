@@ -25,6 +25,15 @@
     </table>
     <form method="post" class="taking">
       @csrf
+      <div class="timer">
+        <div class="timer-count">
+          <input name="timer" id="timer-value" value="50:00" readonly />
+          <i id="btn-eye" class="fas fa-eye"></i>
+        </div>
+        <div id="timer-progress">
+          <div id="timer-bar"></div>
+        </div>
+      </div>
       <ul class="main">
         <li class="question-item">
           <div class="question-mark">

@@ -6,6 +6,7 @@
   <!-- Font awesome 5 icon -->
   <script src="https://kit.fontawesome.com/d3981548c2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href={{ mix("css/app.css") }} />
+  <link rel="stylesheet" href={{ mix("css/auth_login.css") }} />
   <title>Đăng nhập</title>
 </head>
 <body>

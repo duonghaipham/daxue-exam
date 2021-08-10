@@ -1,4 +1,13 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/subject_view.js": "/js/subject_view.js",
+    "/js/exam_take.js": "/js/exam_take.js",
+    "/css/auth_register.css": "/css/auth_register.css",
+    "/css/auth_login.css": "/css/auth_login.css",
+    "/css/auth_change.css": "/css/auth_change.css",
+    "/css/home.css": "/css/home.css",
+    "/css/app.css": "/css/app.css",
+    "/css/subject_view.css": "/css/subject_view.css",
+    "/css/exam_view.css": "/css/exam_view.css",
+    "/css/exam_take.css": "/css/exam_take.css"
 }
