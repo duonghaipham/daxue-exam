@@ -1,5 +1,5 @@
 <div class="login">
-  <form class="login-container auth" method="post">
+  <form class="login-container auth" method="post" action="/authenticate">
     @csrf
     <h2 class="header">Đăng nhập</h2>
     <div class="typing-section">
