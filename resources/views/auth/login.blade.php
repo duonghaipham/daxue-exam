@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Font awesome 5 icon -->
-  <script src="https://kit.fontawesome.com/d3981548c2.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href={{ mix("css/app.css") }} />
+@extends('layout.master')
+
+@section('css')
+  @parent
   <link rel="stylesheet" href={{ mix("css/auth_login.css") }} />
-  <title>Đăng nhập</title>
-</head>
-<body>
-  @include('includes.navbar')
+@stop
+
+@section('title')
+  @parent
+  Đăng nhập
+@stop
+
+@section('main')
+  @parent
   @include('auth.partial.login')
-  @include('includes.footer')
-  <script src={{ mix('js/app.js') }} type="text/javascript"></script>
-</body>
-</html>
+@stop
