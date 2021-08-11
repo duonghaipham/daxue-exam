@@ -27,9 +27,25 @@ a {
   text-decoration: none;
 }
 
-button, input {
+button, input, select {
   background: none;
   outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
 }
 
 @import "./general";

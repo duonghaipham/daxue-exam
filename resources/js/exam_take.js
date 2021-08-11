@@ -3,7 +3,7 @@ let minute = parseInt(primitiveTime[0]);
 let second = parseInt(primitiveTime[1]);
 const baseSecond = 60 * minute + second;  // for calculating percentage later
 
-// if the number has only on digit, push '0' before it
+// if the number has only one digit, push '0' before it
 const fixTwoDigits = number => number.toString().length === 1 ? '0' + number : number;
 
 const startTimer = () => {
@@ -42,4 +42,21 @@ document.getElementById('btn-eye').addEventListener('click', event => {
     document.getElementById('timer-value').style.display = 'block';
     document.getElementsByClassName('timer-count')[0].style.justifyContent = 'space-between';
   }
-})
+});
+
+// flag marks submitting action
+let formSubmitting = false;
+
+// if the action is submitting, then switch on the flag
+document.getElementsByClassName('taking')[0].addEventListener('submit', () => {
+  formSubmitting = true;
+});
+
+// Warn before unload the exam taking
+window.addEventListener("beforeunload", event => {
+  if (formSubmitting)
+    return undefined;
+
+  event.returnValue = '';
+  return '';
+});

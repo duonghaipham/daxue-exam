@@ -62,6 +62,51 @@
         }
       }
     }
+
+    .form-update {
+      .update-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px 40px;
+        align-items: center;
+        border-bottom: 1px #ccc solid;
+        padding: 30px 0;
+
+        .update-info-item {
+          display: flex;
+
+          label {
+            width: 40%;
+          }
+
+          .typing {
+            width: 60%;
+            border-bottom: 1px #999 solid;
+            font-size: 14px;
+
+            &:focus {
+              border-bottom: 2px #0e76bc solid;
+            }
+          }
+        }
+      }
+
+      .btn-update {
+        display: block;
+        margin: 15px 0 0 auto;
+        border: 1.5px #3fb380 solid;
+        border-radius: 3px;
+        padding: 10px 20px;
+        color: #3fb380;
+        cursor: pointer;
+        font-size: 17px;
+
+        &:hover {
+          background-color: #3fb380;
+          color: #fff;
+        }
+      }
+    }
   }
 }
 
@@ -73,6 +118,12 @@
       .profile-info {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(4, 1fr);
+      }
+
+      .form-update {
+        .update-info {
+          grid-template-columns: 1fr;
+        }
       }
     }
   }
