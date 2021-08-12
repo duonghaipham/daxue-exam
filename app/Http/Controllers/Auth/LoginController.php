@@ -7,11 +7,23 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller {
-  public function authenticate(Request $request) {
-    $credentials = $request->only('username', 'password');
-
-    if (Auth::attempt($credentials)) {
-      return redirect()->intended();
+    public function index() {
+        return view('auth.login');
     }
-  }
+
+    public function authenticate(Request $request) {
+        $credentials = $request->validate([
+            'username' => ['required'],
+            'password' => ['required']
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended(route('home'));
+        }
+
+        return back()->withErrors([
+            'username' => 'The provided credentials does not match our record.',
+        ]);
+    }
 }

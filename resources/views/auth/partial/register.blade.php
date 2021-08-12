@@ -1,5 +1,5 @@
 <div class="register">
-  <form class="register-container auth" method="post">
+  <form class="register-container auth" method="post" action="{{ route('register.store') }}">
     @csrf
     <h2 class="header">Đăng ký</h2>
     <div class="typing-section">

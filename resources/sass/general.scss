@@ -193,6 +193,7 @@
 
       .input {
         display: flex;
+        margin-bottom: 5px;
 
         i {
           border: 1px #ccc solid;
@@ -216,6 +217,23 @@
         }
       }
     }
+
+    .item, .list-errors {
+      .error {
+        color: #ec4134;
+        font-size: 15px;
+        font-style: italic;
+      }
+    }
+  }
+
+  .success {
+    margin-bottom: 15px;
+    border-radius: 3px;
+    padding: 10px 15px;
+    background-color: #d4edda;
+    color: #155724;
+    font-size: 15px;
   }
 
   .btn-submit {

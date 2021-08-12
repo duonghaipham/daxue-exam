@@ -1,5 +1,5 @@
 <div class="login">
-  <form class="login-container auth" method="post" action="/authenticate">
+  <form class="login-container auth" method="post" action="{{ route('login.authenticate') }}">
     @csrf
     <h2 class="header">Đăng nhập</h2>
     <div class="typing-section">
@@ -17,6 +17,13 @@
           <input type="password" name="password" id="password"/>
         </div>
       </div>
+      @if($errors->any())
+        <ul class="list-errors">
+          @foreach($errors->all() as $error)
+            <li class="error">{{ $error }}</li>
+          @endforeach
+        </ul>
+      @endif
       <button type="submit" class="btn-submit">Đăng nhập</button>
     </div>
   </form>

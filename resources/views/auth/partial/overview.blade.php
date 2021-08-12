@@ -4,42 +4,42 @@
 <ul class="profile-info">
   <li class="profile-info-item">
     <div class="label">Mã thành viên</div>
-    <div class="value">343522789</div>
+    <div class="value">{{ $id }}</div>
   </li>
   <li class="profile-info-item">
     <div class="label">Tên đăng nhập</div>
-    <div class="value">tyler</div>
+    <div class="value">{{ $username }}</div>
   </li>
   <li class="profile-info-item">
     <div class="label">Ngày sinh</div>
-    <div class="value">07/08/2000</div>
+    <div class="value">{{ $dateOfBirth }}</div>
   </li>
   <li class="profile-info-item">
     <div class="label">Giới tính</div>
-    <div class="value">Nam</div>
+    <div class="value">{{ $gender }}</div>
   </li>
 </ul>
 <ul class="profile-info">
   <li class="profile-info-item">
     <div class="label">Trường</div>
-    <div class="value">THPT Lấp Vò 3</div>
+    <div class="value">{{ $school }}</div>
   </li>
   <li class="profile-info-item">
     <div class="label">Lớp</div>
-    <div class="value">12A1</div>
+    <div class="value">{{ $school }}</div>
   </li>
   <li class="profile-info-item">
-    <div class="label">Tỉnh</div>
-    <div class="value">Đồng Tháp</div>
+    <div class="label">Tỉnh/thành phố</div>
+    <div class="value">{{ $city }}</div>
   </li>
   <li class="profile-info-item">
     <div class="label">Thư điện tử</div>
     <div class="value">
-      <a href="mailto:haiduongzzz123@gmail.com">haiduongzzz123@gmail.com</a>
+      <a href="mailto:haiduongzzz123@gmail.com">{{ $email }}</a>
     </div>
   </li>
   <li class="profile-info-item">
     <div class="label">Số điện thoại</div>
-    <div class="value">0907665xxx</div>
+    <div class="value">{{ $phone }}</div>
   </li>
 </ul>
