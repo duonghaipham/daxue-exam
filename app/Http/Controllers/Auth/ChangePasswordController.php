@@ -25,6 +25,6 @@ class ChangePasswordController extends Controller {
         $currentUser->password = Hash::make($request->new_password);
         $currentUser->save();
 
-        return redirect(route('change_password.edit'))->with('status', trans('passwords.reset'));
+        return back()->with('status', trans('passwords.reset'));
     }
 }

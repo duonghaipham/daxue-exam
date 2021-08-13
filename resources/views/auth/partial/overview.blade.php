@@ -26,7 +26,7 @@
   </li>
   <li class="profile-info-item">
     <div class="label">Lớp</div>
-    <div class="value">{{ $school }}</div>
+    <div class="value">{{ $class }}</div>
   </li>
   <li class="profile-info-item">
     <div class="label">Tỉnh/thành phố</div>

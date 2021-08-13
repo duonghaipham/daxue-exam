@@ -24,6 +24,9 @@
           @endforeach
         </ul>
       @endif
+      @if(\Illuminate\Support\Facades\Session::has('status'))
+        <p class="success">{{ \Illuminate\Support\Facades\Session::get('status') }}</p>
+      @endif
       <button type="submit" class="btn-submit">Đăng nhập</button>
     </div>
   </form>

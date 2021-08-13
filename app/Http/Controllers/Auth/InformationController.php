@@ -4,10 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Rules\MatchOldPassword;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class InformationController extends Controller {
     private $user;
@@ -36,5 +34,26 @@ class InformationController extends Controller {
 
     public function edit() {
         return view('auth.update', $this->user);
+    }
+
+    public function update(Request $request) {
+        $request->validate([
+            'full_name' => ['required'],
+            'email' => ['email'],
+            'phone' => ['numeric']
+        ]);
+
+        $user = User::find(Auth::id());
+        $user->name = $request->full_name;
+        $user->gender = $request->gender;
+        $user->date_of_birth = $request->date_of_birth;
+        $user->school = $request->school;
+        $user->class = $request->class;
+        $user->city = $request->city;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->save();
+
+        return back();
     }
 }
