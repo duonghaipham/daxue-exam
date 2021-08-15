@@ -29,26 +29,45 @@
         </div>
       </div>
     </div>
-    <div class="accordion">
+    <div class="accordion" id="test">
       <button class="btn-accordion">Đề thi<i class="fas"></i></button>
       <ul class="panel">
+        @foreach($tests as $test)
         <li class="panel-item">
           <div class="panel-head">
             <i class="icon far fa-file-alt"></i>
-            <a href="/exam/view" class="name-topic">Đề thi thử lịch sử THPT Lấp Vò 3 - tỉnh Đồng Tháp</a>
+            <a href="/exam/view" class="name-topic">{{ $test->name }}</a>
             <i class="btn-item-info far fa-question-circle"></i>
           </div>
           <ul class="panel-detail">
-            <li class="item-detail">Năm phát hành:<span class="year-published">2020</span></li>
-            <li class="item-detail">Người đăng:<span class="creator">admin</span></li>
-            <li class="item-detail">Ngày đăng:<span class="date-posted">04/08/2021</span></li>
-            <li class="item-detail">Đã làm bài:<span class="done-number">100</span></li>
+            <li class="item-detail">Năm phát hành:<span class="year-published">{{ $test->year_published }}</span></li>
+            <li class="item-detail">Người đăng:<span class="creator">{{ $test->creator }}</span></li>
+            <li class="item-detail">Ngày đăng:<span class="date-posted">{{ $test->created_at }}</span></li>
+            <li class="item-detail">Đã làm bài:<span class="done-number">{{ $test->total }}</span></li>
           </ul>
         </li>
+        @endforeach
       </ul>
     </div>
-    <div class="accordion">
+    <div class="accordion" id="revision">
       <button class="btn-accordion">Ôn tập<i class="fas"></i></button>
+      <ul class="panel">
+        @foreach($revisions as $revision)
+          <li class="panel-item">
+            <div class="panel-head">
+              <i class="icon far fa-file-alt"></i>
+              <a href="/exam/view" class="name-topic">{{ $revision->name }}</a>
+              <i class="btn-item-info far fa-question-circle"></i>
+            </div>
+            <ul class="panel-detail">
+              <li class="item-detail">Năm phát hành:<span class="year-published">{{ $revision->year_published }}</span></li>
+              <li class="item-detail">Người đăng:<span class="creator">{{ $revision->creator }}</span></li>
+              <li class="item-detail">Ngày đăng:<span class="date-posted">{{ $revision->created_at }}</span></li>
+              <li class="item-detail">Đã làm bài:<span class="done-number">{{ $revision->total }}</span></li>
+            </ul>
+          </li>
+        @endforeach
+      </ul>
     </div>
   </div>
 </div>

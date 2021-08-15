@@ -2,10 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Exam;
 use App\Models\Subject;
 
 class HomeController extends Controller {
     public function index() {
-        return view('index')->with('subjects', Subject::all());
+        $subjects = Subject::all()->toArray();
+
+        for ($i = 0; $i < count($subjects); $i++) {
+            $subjects[$i]['amount_tests'] = Exam::query()
+                ->where('subject_id', '=', $subjects[$i]['id'])
+                ->where('type', '=', 'test')
+                ->get()
+                ->count();
+
+            $subjects[$i]['amount_revisions'] = Exam::query()
+                ->where('subject_id', '=', $subjects[$i]['id'])
+                ->where('type', '=', 'revision')
+                ->get()
+                ->count();
+
+            $subjects[$i] = (object)$subjects[$i];
+        }
+
+        return view('index')->with('subjects', $subjects);
     }
 }
