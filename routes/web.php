@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\InformationController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\SubjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,7 +56,7 @@ Route::group([
 Route::group([
     'middleware' => 'auth'
 ], function () {
-    Route::view('/subject/view', 'subject.view');
+    Route::get('/subject/{id}', [SubjectController::class, 'index'])->name('subject.index');
     Route::view('/exam/view', 'exam.view');
     Route::view('/exam/take', 'exam.take');
 });

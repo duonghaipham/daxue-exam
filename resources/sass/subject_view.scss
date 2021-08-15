@@ -19,6 +19,7 @@
     background-color: rgba(0, 0, 0, 0.25);
 
     blockquote {
+      width: 1000px;
       color: #fff;
       font-family: "Roboto", sans-serif;
       opacity: 0.95;
@@ -236,11 +237,11 @@
       object-fit: cover;
       object-position: center center;
     }
-  }
 
-  .overlay {
-    blockquote {
-      width: 80%;
+    .overlay {
+      blockquote {
+        width: 90%;
+      }
     }
   }
 

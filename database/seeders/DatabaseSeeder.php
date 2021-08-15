@@ -13,10 +13,7 @@ class DatabaseSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        DB::table('users')->insert([
-            'username' => 'tyler',
-            'password' => Hash::make('12345678'),
-            'name' => 'William Tyler'
-        ]);
+        $this->call(SubjectSeeder::class);
+        $this->call(QuoteSeeder::class);
     }
 }

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Quote extends Model
 {
     use HasFactory;
+
+    public $timestamps = false;
+
+    public function subject() {
+        return $this->belongsTo(Subject::class);
+    }
 }

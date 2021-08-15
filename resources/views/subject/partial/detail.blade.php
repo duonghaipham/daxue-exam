@@ -1,16 +1,16 @@
 <div class="decoration">
-  <img src="{{ url("img/history.jpg") }}" alt="Mathematics" />
+  <img src="{{ url('img/subject-' . $subject->id . '.jpg') }}" alt="Mathematics" />
   <div class="overlay">
     <blockquote>
-      <p class="content">"Lịch sử chỉ có thể được viết tốt ở một đất nước tự do"</p>
-      <p class="author">- Karl Marx</p>
+      <p class="content">"{{ $quote->content }}"</p>
+      <p class="author">- {{ $quote->author }}</p>
     </blockquote>
   </div>
 </div>
 <div class="subject-content">
   <div class="subjects-container">
     <div class="subject-head">
-      <h1>Lịch sử</h1>
+      <h1>{{ $subject->name }}</h1>
       <div class="filter">
         <i class="fas fa-filter" id="btn-filter"></i>
         <div class="filter-overlay">
