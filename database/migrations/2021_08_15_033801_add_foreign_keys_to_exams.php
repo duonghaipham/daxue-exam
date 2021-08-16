@@ -15,6 +15,7 @@ class AddForeignKeysToExams extends Migration
     {
         Schema::table('exams', function (Blueprint $table) {
             $table->foreign('subject_id')->references('id')->on('subjects');
+            $table->foreign('creator')->references('id')->on('users');
         });
     }
 

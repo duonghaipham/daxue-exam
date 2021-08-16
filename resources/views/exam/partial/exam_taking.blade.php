@@ -4,7 +4,7 @@
     <table class="result">
       <tr class="row">
         <td class="label">Bắt đầu thi</td>
-        <td class="value">09/08/2021 18:49</td>
+        <td class="value">{{ $exam->created_at }}</td>
       </tr>
       <tr class="row">
         <td class="label">Trạng thái</td>
@@ -12,15 +12,15 @@
       </tr>
       <tr class="row">
         <td class="label">Kết thúc khi</td>
-        <td class="value">10/08/2021 18:49</td>
+        <td class="value">{{ $exam->closed_at }}</td>
       </tr>
       <tr class="row">
         <td class="label">Thời gian</td>
-        <td class="value">27 phút 10 giây</td>
+        <td class="value">{{ intdiv($work->pivot->second, 60) }} phút {{ $work->pivot->second % 60 }} giây</td>
       </tr>
       <tr class="row">
         <td class="label">Số câu đúng</td>
-        <td class="value">32/40</td>
+        <td class="value">/{{ $exam->questions->count() }}</td>
       </tr>
     </table>
     <form method="post" class="taking">
@@ -35,49 +35,32 @@
         </div>
       </div>
       <ul class="main">
+        @foreach($exam->questions as $key_question => $value_question)
         <li class="question-item">
           <div class="question-mark">
-            <h3>Câu <span class="number">1</span></h3>
+            <h3>Câu <span class="number">{{ $key_question + 1 }}</span></h3>
             <i class="fas fa-check" style="color: #3da933"></i>
   {{--          <i class="fas fa-times" style="color: #dc0f14"></i>--}}
           </div>
           <div class="content">
             <div class="question">
-              <p class="question-text">Giặc Ân là giặc nào?</p>
+              <p class="question-text">{{ $value_question->content }}</p>
               <ul class="options">
+                @foreach($value_question->answers as $key_answer => $value_answer)
                 <li class="option">
-                  <input type="radio" name="question_1" id="option-1"/>
-                  <label for="option-1">
-                    <span class="option-char">a.</span>
-                    <span class="option-text">Nhà Hạ</span>
+                  <input type="radio" name="question_{{ $key_question + 1 }}" id="option-{{ $key_question + 1 }}-{{ $key_answer + 1 }}"/>
+                  <label for="option-{{ $key_question + 1 }}-{{ $key_answer + 1 }}">
+                    <span class="option-char">{{ chr($key_answer + 65) }}.</span>
+                    <span class="option-text">{{ $value_answer->content }}</span>
                   </label>
                 </li>
-                <li class="option">
-                  <input type="radio" name="question_1" id="option-2"/>
-                  <label for="option-2">
-                    <span class="option-char">b.</span>
-                    <span class="option-text">Nhà Thương</span>
-                  </label>
-                </li>
-                <li class="option">
-                  <input type="radio" name="question_1" id="option-3"/>
-                  <label for="option-3">
-                    <span class="option-char">c.</span>
-                    <span class="option-text">Nhà Chu</span>
-                  </label>
-                </li>
-                <li class="option">
-                  <input type="radio" name="question_1" id="option-4"/>
-                  <label for="option-4">
-                    <span class="option-char">d.</span>
-                    <span class="option-text">Nhà Tần</span>
-                  </label>
-                </li>
+                @endforeach
               </ul>
             </div>
-            <p class="answer">Đáp án đúng là:<span class="answer-text">Nhà Thương</span></p>
+            <p class="answer">Đáp án đúng là:<span class="answer-text">{{ $value_question->answer->content }}</span></p>
           </div>
         </li>
+        @endforeach
       </ul>
       <button type="submit" class="btn-submit-exam">Nộp bài</button>
     </form>

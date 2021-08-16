@@ -9,12 +9,16 @@ class Exam extends Model
 {
     use HasFactory;
 
+    public function user() {
+        return $this->belongsTo(User::class, 'creator', 'id', 'users');
+    }
+
     public function questions() {
         return $this->hasMany(Question::class);
     }
 
     public function users() {
-        return $this->belongsToMany(User::class, 'works')->withPivot(['attempt', 'second']);
+        return $this->belongsToMany(User::class, 'works')->withPivot(['attempt', 'second', 'out_of']);
     }
 
     public function subject() {

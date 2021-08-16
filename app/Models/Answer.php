@@ -9,6 +9,8 @@ class Answer extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function result() {
         return $this->hasOne(Result::class);
     }

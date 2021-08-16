@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\InformationController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\ExamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,10 +54,13 @@ Route::group([
     Route::post('/change-password', [ChangePasswordController::class, 'update'])->name('change_password.update');
 });
 
+Route::get('/subject/{id}', [SubjectController::class, 'index'])->name('subject.index')->middleware('auth');
+
 Route::group([
+    'prefix' => 'exam',
     'middleware' => 'auth'
-], function () {
-    Route::get('/subject/{id}', [SubjectController::class, 'index'])->name('subject.index');
-    Route::view('/exam/view', 'exam.view');
-    Route::view('/exam/take', 'exam.take');
+], function() {
+    Route::get('/{id}', [ExamController::class, 'index'])->name('exam.index');
+    Route::get('/{id}/take', [ExamController::class, 'take'])->name('exam.take');
+    Route::post('/{id}/take', [ExamController::class, 'submit'])->name('exam.submit');
 });

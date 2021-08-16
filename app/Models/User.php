@@ -45,7 +45,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function exam_created() {
+        return $this->hasMany(Exam::class, 'creator', 'id');
+    }
+
     public function exams() {
-        return $this->belongsToMany(Exam::class, 'works')->withPivot(['attempt', 'second']);
+        return $this->belongsToMany(Exam::class, 'works')->withPivot(['attempt', 'second', 'out_of']);
     }
 }

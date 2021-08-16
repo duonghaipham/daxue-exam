@@ -7,7 +7,7 @@
 
 @section('title')
   @parent
-  Tên bài thi
+  {{ $exam->name }}
 @stop
 
 @section('main')

@@ -12,4 +12,12 @@ class Work extends Model
     public function results() {
         return $this->hasMany(Result::class);
     }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function exam() {
+        return $this->belongsTo(Exam::class);
+    }
 }

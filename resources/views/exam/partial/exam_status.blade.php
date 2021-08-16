@@ -2,34 +2,43 @@
   <div class="exam-status-container">
     @include('exam.partial.breadcrumb')
     <div class="manipulation frame">
-      <h1>Đề thi lịch sử THPT Lấp Vò 3 - Đồng Tháp</h1>
+      <h1>{{ $exam->name }}</h1>
       <ul class="info list">
-        <li class="item"><span class="label">Đề mở vào:</span> <span>04/08/2021 14:20</span></li>
-        <li class="item"><span class="label">Đề đóng vào:</span> <span>05/08/2021 21:28</span></li>
-        <li class="item"><span class="label">Người đăng:</span> <span>tyler</span></li>
+        <li class="item"><span class="label">Đề mở vào:</span> <span>{{ $exam->created_at }}</span></li>
+        <li class="item"><span class="label">Đề đóng vào:</span> <span>{{ $exam->closed_at }}</span></li>
+        <li class="item"><span class="label">Người đăng:</span> <span>{{ $exam->user->name }}</span></li>
       </ul>
-      <p class="description">Nội dung bài thi gồm các chương 1, 2, 3</p>
+      <p class="description">{{ $exam->description }}</p>
       <ul class="essential-info list">
-        <li class="item"><span class="label">Số lần làm bài:</span> <span>1</span></li>
-        <li class="item"><span class="label">Thời gian:</span> <span>50 phút</span></li>
-        <li class="item"><span class="label">Số câu:</span> <span>40</span></li>
+        <li class="item"><span class="label">Số lần làm bài:</span> <span>{{ $exam->attempt_limit }}</span></li>
+        <li class="item"><span class="label">Thời gian:</span> <span>{{ $exam->minute_limit }} phút</span></li>
+        <li class="item"><span class="label">Số câu:</span> <span>{{ $exam->questions->count() }}</span></li>
       </ul>
+      @if($exam->users->count() != 0)
       <table class="table-state">
         <tr>
           <th>Trạng thái</th>
           <th>Thời gian</th>
           <th>Kết quả</th>
         </tr>
-        <tr>
-          <td>
-            <p class="state">Hoàn thành</p>
-            <p class="submitted">Nộp lúc 05:08:2021 09:01</p>
-          </td>
-          <td>31 phút 15 giây</td>
-          <td><a href="#">23</a>/40</td>
-        </tr>
+        @foreach($exam->users as $work)
+          <tr>
+            <td>
+              <p class="state">Hoàn thành</p>
+              <p class="submitted">Nộp lúc {{ $work->created_at }}</p>
+            </td>
+            <td>
+              {{ intdiv($work->pivot->second, 60) }} phút
+              {{ $work->pivot->second % 60 }} giây
+            </td>
+            <td>
+              <a href="#">{{ $work->pivot->out_of }}</a>/{{ $exam->questions->count() }}
+            </td>
+          </tr>
+        @endforeach
       </table>
-      <a href="/exam/take" class="btn-retry">Làm lại</a>
+      @endif
+      <a href="{{ route('exam.take', $exam->id) }}" class="btn-retry">{{ $exam->users->count() == 0 ? 'Bắt đầu làm' : 'Làm lại' }}</a>
     </div>
   </div>
 </div>

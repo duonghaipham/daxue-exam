@@ -9,6 +9,8 @@ class Result extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function work() {
         return $this->belongsTo(Work::class);
     }

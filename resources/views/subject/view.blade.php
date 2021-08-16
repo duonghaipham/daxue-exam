@@ -7,7 +7,7 @@
 
 @section('title')
   @parent
-  Tên môn học
+  {{ $subject->name }}
 @stop
 
 @section('main')

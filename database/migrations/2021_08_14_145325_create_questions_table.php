@@ -16,9 +16,9 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->unsignedBigInteger('exam_id');
             $table->unsignedBigInteger('id');
+            $table->unsignedBigInteger('answer_id')->nullable();
             $table->string('content');
             $table->enum('type', ['single', 'multiple']);
-            $table->unsignedBigInteger('answer_id');
             $table->primary(['exam_id', 'id']);
         });
     }

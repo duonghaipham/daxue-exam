@@ -36,14 +36,14 @@
         <li class="panel-item">
           <div class="panel-head">
             <i class="icon far fa-file-alt"></i>
-            <a href="/exam/view" class="name-topic">{{ $test->name }}</a>
+            <a href="{{ route('exam.index', $test->id) }}" class="name-topic">{{ $test->name }}</a>
             <i class="btn-item-info far fa-question-circle"></i>
           </div>
           <ul class="panel-detail">
             <li class="item-detail">Năm phát hành:<span class="year-published">{{ $test->year_published }}</span></li>
             <li class="item-detail">Người đăng:<span class="creator">{{ $test->creator }}</span></li>
             <li class="item-detail">Ngày đăng:<span class="date-posted">{{ $test->created_at }}</span></li>
-            <li class="item-detail">Đã làm bài:<span class="done-number">{{ $test->total }}</span></li>
+            <li class="item-detail">Đã làm bài:<span class="done-number">{{ $test->users->count() }}</span></li>
           </ul>
         </li>
         @endforeach
@@ -56,14 +56,14 @@
           <li class="panel-item">
             <div class="panel-head">
               <i class="icon far fa-file-alt"></i>
-              <a href="/exam/view" class="name-topic">{{ $revision->name }}</a>
+              <a href="{{ route('exam.index', $revision->id) }}" class="name-topic">{{ $revision->name }}</a>
               <i class="btn-item-info far fa-question-circle"></i>
             </div>
             <ul class="panel-detail">
               <li class="item-detail">Năm phát hành:<span class="year-published">{{ $revision->year_published }}</span></li>
               <li class="item-detail">Người đăng:<span class="creator">{{ $revision->creator }}</span></li>
               <li class="item-detail">Ngày đăng:<span class="date-posted">{{ $revision->created_at }}</span></li>
-              <li class="item-detail">Đã làm bài:<span class="done-number">{{ $revision->total }}</span></li>
+              <li class="item-detail">Đã làm bài:<span class="done-number">{{ $revision->users->count() }}</span></li>
             </ul>
           </li>
         @endforeach

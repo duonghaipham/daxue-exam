@@ -14,8 +14,9 @@ class ExamSeeder extends Seeder {
     public function run() {
         $test = new Exam();
         $test->name = 'Đề thi thử tỉnh Đồng Tháp 2018-2019';
+        $test->description = 'Nội dung bài thi gồm các chương 1, 2, 3';
         $test->year_published = 2018;
-        $test->closed_time = now();
+        $test->closed_at = now();
         $test->creator = 1;
         $test->attempt_limit = 10;
         $test->minute_limit = 120;
@@ -25,8 +26,9 @@ class ExamSeeder extends Seeder {
 
         $revision = new Exam();
         $revision->name = 'Sự hình thành trật tự thế giới mới sau chiến tranh thế giới thứ hai';
+        $revision->description = 'Không được sử dụng tài liệu';
         $revision->year_published = '2021';
-        $revision->closed_time = now();
+        $revision->closed_at = now();
         $revision->creator = 1;
         $revision->attempt_limit = 2;
         $revision->minute_limit = 60;
