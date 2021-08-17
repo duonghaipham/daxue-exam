@@ -16,14 +16,19 @@ class Question extends Model
     }
 
     public function answers() {
-        return $this->hasMany(Answer::class);
+        return $this->hasMany(Answer::class)
+            ->where('exam_id', '=', $this->exam_id)
+            ->where('question_id', '=', $this->id);
     }
 
     public function answer() {
-        return $this->hasOne(Answer::class);
+        return $this->hasOne(Answer::class)
+            ->where('exam_id', '=', $this->exam_id)
+            ->where('question_id', '=', $this->id)
+            ->where('id', '=', $this->answer_id);
     }
 
-    public function Exam() {
+    public function exam() {
         return $this->belongsTo(Exam::class);
     }
 }

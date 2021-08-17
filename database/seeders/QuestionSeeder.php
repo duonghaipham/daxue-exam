@@ -23,7 +23,7 @@ class QuestionSeeder extends Seeder {
             [
                 'exam_id' => 1,
                 'id' => 2,
-                'content' => 'Tam Đại trong lịch sử Trung Quốc là những triều đại nào?',
+                'content' => 'Triều đại đầu tiên trong lịch sử Trung Quốc?',
                 'type' => 'single',
             ]
         );

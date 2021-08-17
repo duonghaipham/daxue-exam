@@ -32,7 +32,7 @@
               {{ $work->pivot->second % 60 }} giây
             </td>
             <td>
-              <a href="#">{{ $work->pivot->out_of }}</a>/{{ $exam->questions->count() }}
+              <a href="{{ route('exam.review', ['id' => $exam->id, 'attempt' => $work->pivot->attempt]) }}">{{ $work->pivot->out_of }}</a>/{{ $exam->questions->count() }}
             </td>
           </tr>
         @endforeach

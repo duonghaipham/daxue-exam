@@ -63,4 +63,5 @@ Route::group([
     Route::get('/{id}', [ExamController::class, 'index'])->name('exam.index');
     Route::get('/{id}/take', [ExamController::class, 'take'])->name('exam.take');
     Route::post('/{id}/take', [ExamController::class, 'submit'])->name('exam.submit');
+    Route::get('/{id}/attempt/{attempt}', [ExamController::class, 'review'])->name('exam.review');
 });
