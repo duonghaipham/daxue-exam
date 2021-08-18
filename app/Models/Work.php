@@ -9,6 +9,8 @@ class Work extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['out_of'];
+
     public function results() {
         return $this->hasMany(Result::class);
     }

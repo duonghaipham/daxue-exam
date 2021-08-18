@@ -3,7 +3,10 @@
     @include('exam.partial.breadcrumb')
     @section('result_table')
     @show
-    <form method="post" class="taking">
+    <form
+      class="taking"
+      @section('form_attributes')
+      @show >
       @csrf
       @section('timer')
       @show

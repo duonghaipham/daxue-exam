@@ -1,10 +1,16 @@
 @extends('exam.layout.master')
 
+@section('form_attributes')
+  @parent
+  id="form-exam" method="post" action={{ route('exam.submit', $exam->id) }}
+@stop
+
 @section('timer')
   @parent
   <div class="timer">
     <div class="timer-count">
-      <input name="timer" id="timer-value" value="{{ $exam->minute_limit }}:00" readonly />
+      <p id="timer-value">{{ $exam->minute_limit }}:00</p>
+      <input type='hidden' name="timer" id="timer-taken" value="0:0" readonly />
       <i id="btn-eye" class="fas fa-eye"></i>
     </div>
     <div id="timer-progress">
@@ -28,7 +34,9 @@
                 <input
                   type="radio"
                   name="question_{{ $key_question + 1 }}"
-                  id="option-{{ $key_question + 1 }}-{{ $key_answer + 1 }}" />
+                  id="option-{{ $key_question + 1 }}-{{ $key_answer + 1 }}"
+                  value="{{ $key_answer + 1 }}"
+                  required />
                 <label for="option-{{ $key_question + 1 }}-{{ $key_answer + 1 }}">
                   <span class="option-char">{{ chr($key_answer + 65) }}.</span>
                   <span class="option-text">{{ $value_answer->content }}</span>

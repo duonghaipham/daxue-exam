@@ -1,6 +1,8 @@
-const primitiveTime = document.getElementById('timer-value').value.split(':');
+const primitiveTime = document.getElementById('timer-value').innerText.split(':');
 let minute = parseInt(primitiveTime[0]);
 let second = parseInt(primitiveTime[1]);
+let minuteTaken = 0;
+let secondTaken = 0;
 const baseSecond = 60 * minute + second;  // for calculating percentage later
 
 // if the number has only one digit, push '0' before it
@@ -9,7 +11,7 @@ const fixTwoDigits = number => number.toString().length === 1 ? '0' + number : n
 const startTimer = () => {
   if (minute === 0 && second === 0) {
     clearInterval(interval);
-    document.getElementsByClassName('btn-submit-exam')[0].click();
+    document.getElementById('form-exam').submit();
   }
   else {
     second -= 1;
@@ -18,10 +20,17 @@ const startTimer = () => {
       second = 59;
     }
 
+    secondTaken += 1;
+    if (secondTaken === 60) {
+      minuteTaken += 1;
+      secondTaken = 0;
+    }
+
     // calculate the remained percentage for progress bar;
     const percentage = (60 * minute + second) / baseSecond * 100;
     document.getElementById('timer-bar').style.width = percentage + '%';
-    document.getElementById('timer-value').value = fixTwoDigits(minute) + ':' + fixTwoDigits(second);
+    document.getElementById('timer-value').innerText = fixTwoDigits(minute) + ':' + fixTwoDigits(second);
+    document.getElementById('timer-taken').value = minuteTaken + ':' + secondTaken;
   }
 }
 
