@@ -16,6 +16,11 @@ class ExamController extends Controller {
             ->with('exam', Exam::query()->find($id));
     }
 
+    public function exceed($id) {
+        return view('exam.exceed')
+            ->with('id', $id);
+    }
+
     public function take($id) {
         $exam = Exam::query()->find($id);
 

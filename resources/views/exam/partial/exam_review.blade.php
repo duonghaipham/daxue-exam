@@ -5,7 +5,7 @@
   <table class="result">
     <tr class="row">
       <td class="label">Bắt đầu thi</td>
-      <td class="value">{{ $exam->created_at }}</td>
+      <td class="value">{{ $exam->created_at->format('H:i j/n/Y') }}</td>
     </tr>
     <tr class="row">
       <td class="label">Trạng thái</td>
@@ -13,7 +13,7 @@
     </tr>
     <tr class="row">
       <td class="label">Kết thúc khi</td>
-      <td class="value">{{ $exam->closed_at }}</td>
+      <td class="value">{{ date('H:i j/n/Y', strtotime($exam->closed_at)) }}</td>
     </tr>
     <tr class="row">
       <td class="label">Thời gian</td>

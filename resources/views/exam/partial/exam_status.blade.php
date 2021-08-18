@@ -4,8 +4,8 @@
     <div class="manipulation frame">
       <h1>{{ $exam->name }}</h1>
       <ul class="info list">
-        <li class="item"><span class="label">Đề mở vào:</span> <span>{{ $exam->created_at }}</span></li>
-        <li class="item"><span class="label">Đề đóng vào:</span> <span>{{ $exam->closed_at }}</span></li>
+        <li class="item"><span class="label">Đề mở vào:</span> <span>{{ $exam->created_at->format('H:i j/n/Y') }}</span></li>
+        <li class="item"><span class="label">Đề đóng vào:</span> <span>{{ date('H:i j/n/Y', strtotime($exam->closed_at)) }}</span></li>
         <li class="item"><span class="label">Người đăng:</span> <span>{{ $exam->user->name }}</span></li>
       </ul>
       <p class="description">{{ $exam->description }}</p>
@@ -25,7 +25,7 @@
           <tr>
             <td>
               <p class="state">Hoàn thành</p>
-              <p class="submitted">Nộp lúc {{ $work->created_at }}</p>
+              <p class="submitted">Nộp lúc {{ $work->created_at->format('H:i j/n/Y') }}</p>
             </td>
             <td>
               {{ intdiv($work->pivot->second, 60) }} phút

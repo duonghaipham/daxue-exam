@@ -33,8 +33,8 @@
           <p class="error">{{ $message }}</p>
         @enderror
       </div>
-      @if(\Illuminate\Support\Facades\Session::has('status'))
-        <p class="success">{{ \Illuminate\Support\Facades\Session::get('status') }}</p>
+      @if(session()->has('status'))
+        <p class="success">{{ session()->get('status') }}</p>
       @endif
       <button type="submit" class="btn-submit">Đổi mật khẩu</button>
     </div>

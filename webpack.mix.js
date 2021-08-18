@@ -23,4 +23,5 @@ mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/auth_view.scss', 'public/css')
    .sass('resources/sass/exam_take.scss', 'public/css')
    .sass('resources/sass/exam_view.scss', 'public/css')
+   .sass('resources/sass/exam_exceed.scss', 'public/css')
    .sass('resources/sass/subject_view.scss', 'public/css');

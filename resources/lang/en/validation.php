@@ -136,8 +136,9 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'exceed' => [
+            'attempt' => 'You have reached the maximum attempt limit of this exam',
+            'death' => 'The exam was closed'
         ],
     ],
 

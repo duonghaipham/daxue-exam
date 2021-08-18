@@ -61,7 +61,13 @@ Route::group([
     'middleware' => 'auth'
 ], function() {
     Route::get('/{id}', [ExamController::class, 'index'])->name('exam.index');
-    Route::get('/{id}/take', [ExamController::class, 'take'])->name('exam.take');
-    Route::post('/{id}/take', [ExamController::class, 'submit'])->name('exam.submit');
+    Route::get('{id}/exceed', [ExamController::class, 'exceed'])->name('exam.exceed');
     Route::get('/{id}/attempt/{attempt}', [ExamController::class, 'review'])->name('exam.review');
+    Route::group(
+        ['middleware' => 'exam.take'],
+        function () {
+            Route::get('/{id}/take', [ExamController::class, 'take'])->name('exam.take');
+            Route::post('/{id}/take', [ExamController::class, 'submit'])->name('exam.submit');
+        }
+    );
 });
