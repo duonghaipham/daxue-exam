@@ -23,7 +23,7 @@
   @foreach($exam->questions as $key_question => $value_question)
     <li class="question-item">
       <div class="question-mark">
-        <h3>Câu <span class="number">{{ $key_question + 1 }}</span></h3>
+        <h3>{{ __('layout.exam.question') }} <span class="number">{{ $key_question + 1 }}</span></h3>
       </div>
       <div class="content">
         <div class="question">
@@ -52,5 +52,5 @@
 
 @section('btn_submit')
   @parent
-  <button type="submit" class="btn-submit-exam">Nộp bài</button>
+  <button type="submit" class="btn-submit-exam">{{ __('layout.exam.submit') }}</button>
 @stop

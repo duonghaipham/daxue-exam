@@ -7,7 +7,7 @@
 
 @section('title')
   @parent
-  Tổng quan
+  @lang('layout.user.overview')
 @stop
 
 @section('main')

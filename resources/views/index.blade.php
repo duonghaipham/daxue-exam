@@ -6,7 +6,7 @@
 
 @section('title')
   @parent
-  Luyện thi xã hội
+  {{ __('layout.home.welcome') }}
 @stop
 
 @section('main')

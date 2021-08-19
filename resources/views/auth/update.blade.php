@@ -7,7 +7,7 @@
 
 @section('title')
   @parent
-  Cập nhật thông tin
+  @lang('layout.user.update')
 @stop
 
 @section('main')

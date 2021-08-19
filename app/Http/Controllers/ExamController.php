@@ -7,18 +7,25 @@ use App\Models\Exam;
 use App\Models\Question;
 use App\Models\Result;
 use App\Models\Work;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ExamController extends Controller {
     public function index($id) {
+        $works = Work::query()
+            ->where('user_id', '=', Auth::id())
+            ->where('exam_id', '=', $id)
+            ->get();
+
         return view('exam.view')
+            ->with('works', $works)
             ->with('exam', Exam::query()->find($id));
     }
 
     public function exceed($id) {
         return view('exam.exceed')
-            ->with('id', $id);
+            ->with('exam', Exam::query()->find($id));
     }
 
     public function take($id) {
@@ -36,6 +43,7 @@ class ExamController extends Controller {
 
     public function submit(Request $request, $id) {
         $timer = explode(':', $request->get('timer'));  // split timer mm:ss into an array
+        $second = $timer[0] * 60 + $timer[1];
         $questions = array_filter(
             $request->all(),
             function ($key) {
@@ -50,7 +58,8 @@ class ExamController extends Controller {
         $work->user_id = Auth::id();
         $work->exam_id = $id;
         $work->attempt = $attempt;
-        $work->second = $timer[0] * 60 + $timer[1];
+        $work->second = $second;
+        $work->started_at = Carbon::now()->subRealSeconds($second);
         $work->save();  // insert this attempt data
 
         $check_questions = Question::query()

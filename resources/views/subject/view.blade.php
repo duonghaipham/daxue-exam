@@ -7,7 +7,7 @@
 
 @section('title')
   @parent
-  {{ $subject->name }}
+  {{ __('layout.home.subject.' . $subject->name) }}
 @stop
 
 @section('main')

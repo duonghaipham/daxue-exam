@@ -7,7 +7,7 @@
 
 @section('title')
   @parent
-  Đăng ký
+  @lang('layout.layout.register')
 @stop
 
 @section('main')

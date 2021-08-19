@@ -4,23 +4,26 @@
   @parent
   <table class="result">
     <tr class="row">
-      <td class="label">Bắt đầu thi</td>
-      <td class="value">{{ $exam->created_at->format('H:i j/n/Y') }}</td>
+      <td class="label">{{ __('layout.exam.started_at') }}</td>
+      <td class="value">{{ date('H:i:s j/n/Y', strtotime($work->started_at)) }}</td>
     </tr>
     <tr class="row">
-      <td class="label">Trạng thái</td>
-      <td class="value">Hoàn thành</td>
+      <td class="label">{{ __('layout.exam.status') }}</td>
+      <td class="value">{{ __('layout.exam.completed') }}</td>
     </tr>
     <tr class="row">
-      <td class="label">Kết thúc khi</td>
-      <td class="value">{{ date('H:i j/n/Y', strtotime($exam->closed_at)) }}</td>
+      <td class="label">{{ __('layout.exam.ended_at') }}</td>
+      <td class="value">{{ $work->created_at->format('H:i:s j/n/Y') }}</td>
     </tr>
     <tr class="row">
-      <td class="label">Thời gian</td>
-      <td class="value">{{ intdiv($work->second, 60) }} phút {{ $work->second % 60 }} giây</td>
+      <td class="label">{{ __('layout.exam.time_limit') }}</td>
+      <td class="value">
+        {{ trans_choice('layout.exam.minute', intdiv($work->second, 60), ['minute' => intdiv($work->second, 60)]) }}
+        {{ trans_choice('layout.exam.second', $work->second % 60, ['second' => $work->second % 60]) }}
+      </td>
     </tr>
     <tr class="row">
-      <td class="label">Số câu đúng</td>
+      <td class="label">{{ __('layout.exam.out_of') }}</td>
       <td class="value">{{ $work->out_of }}/{{ $exam->questions->count() }}</td>
     </tr>
   </table>
@@ -31,7 +34,7 @@
   @foreach($exam->questions as $key_question => $value_question)
     <li class="question-item">
       <div class="question-mark">
-        <h3>Câu <span class="number">{{ $key_question + 1 }}</span></h3>
+        <h3>{{ __('layout.exam.question') }} <span class="number">{{ $key_question + 1 }}</span></h3>
         @if($results[$key_question]->answer_id == $value_question->answer_id)
           <i class="fas fa-check" style="color: #3da933"></i>
         @else
@@ -58,7 +61,7 @@
             @endforeach
           </ul>
         </div>
-        <p class="answer">Đáp án đúng là:<span class="answer-text">{{ $value_question->answer->content }}</span></p>
+        <p class="answer">{{ __('layout.exam.answer') }}<span class="answer-text">{{ $value_question->answer->content }}</span></p>
       </div>
     </li>
   @endforeach

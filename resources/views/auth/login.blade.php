@@ -7,7 +7,7 @@
 
 @section('title')
   @parent
-  Đăng nhập
+  @lang('layout.layout.login')
 @stop
 
 @section('main')

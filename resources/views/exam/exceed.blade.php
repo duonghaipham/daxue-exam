@@ -7,7 +7,7 @@
 
 @section('title')
   @parent
-{{--  {{ $exam->name }}--}}
+  {{ $exam->name }}
 @stop
 
 @section('main')

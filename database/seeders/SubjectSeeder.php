@@ -13,19 +13,19 @@ class SubjectSeeder extends Seeder {
      */
     public function run() {
         $math = new Subject();
-        $math->name = 'Toán học';
+        $math->name = 'mathematics';
         $math->save();
 
         $english = new Subject();
-        $english->name = 'Tiếng Anh';
+        $english->name = 'english';
         $english->save();
 
         $history = new Subject();
-        $history->name = 'Lịch sử';
+        $history->name = 'history';
         $history->save();
 
         $geography = new Subject();
-        $geography->name = 'Địa lý';
+        $geography->name = 'geography';
         $geography->save();
     }
 }

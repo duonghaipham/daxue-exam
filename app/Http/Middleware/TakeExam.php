@@ -29,14 +29,14 @@ class TakeExam {
 
         if ($attempt >= $attempt_limit) {
             Session::forget('exception');
-            Session::put('exception', trans('validation.custom.exceed.attempt'));
+            Session::put('exception', __('message.exceed.attempt'));
             return redirect(route('exam.exceed', $exam_id));
         }
         else {
             $closed_at = Carbon::createFromTimeString(Exam::query()->find($exam_id)->closed_at);
             if (isset($closed_at) && $closed_at->lessThanOrEqualTo(Carbon::now())) {
                 Session::forget('exception');
-                Session::put('exception', trans('validation.custom.exceed.death'));
+                Session::put('exception', __('message.exceed.death'));
                 return redirect(route('exam.exceed', $exam_id));
             }
             return $next($request);

@@ -9,8 +9,8 @@
       <a href="mailto:haiduongzzz123@gmail.com"><i class="fas fa-envelope-open"></i></a>
     </div>
     <div class="info">
-      <a href="#">Privacy and Security</a>
-      <a href="#">Terms of Use</a>
+      <a href="#">{{ __('layout.layout.privacy_and_security') }}</a>
+      <a href="#">{{ __('layout.layout.terms_of_use') }}</a>
     </div>
     <div class="copyright">
       <p>Copyright &copy; 2021 Daxue</p>

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Work;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class WorkSeeder extends Seeder {
@@ -18,7 +19,8 @@ class WorkSeeder extends Seeder {
                 'exam_id' => 1,
                 'attempt' => 1,
                 'second' => 2456,
-                'out_of' => 1
+                'out_of' => 1,
+                'started_at' => Carbon::now()->subDay()->toDateTimeString()
             ],
 //            [
 //                'user_id' => 1,
@@ -35,6 +37,7 @@ class WorkSeeder extends Seeder {
             $workInstance->attempt = $work['attempt'];
             $workInstance->second = $work['second'];
             $workInstance->out_of = $work['out_of'];
+            $workInstance->started_at = $work['started_at'];
             $workInstance->save();
         }
     }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Exam;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class ExamSeeder extends Seeder {
@@ -21,6 +22,7 @@ class ExamSeeder extends Seeder {
         $test->attempt_limit = 10;
         $test->minute_limit = 120;
         $test->type = 'test';
+        $test->closed_at = Carbon::now()->addMonth()->toDateTimeString();
         $test->subject_id = '3';
         $test->save();
 
@@ -33,6 +35,7 @@ class ExamSeeder extends Seeder {
         $revision->attempt_limit = 2;
         $revision->minute_limit = 60;
         $revision->type = 'revision';
+        $revision->closed_at = Carbon::now()->addMonth()->toDateTimeString();
         $revision->subject_id = '3';
         $revision->save();
     }

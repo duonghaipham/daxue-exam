@@ -43,7 +43,7 @@ class InformationController extends Controller {
             'phone' => ['numeric']
         ]);
 
-        $user = User::find(Auth::id());
+        $user = User::query()->find(Auth::id());
         $user->name = $request->full_name;
         $user->gender = $request->gender;
         $user->date_of_birth = $request->date_of_birth;

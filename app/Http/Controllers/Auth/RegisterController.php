@@ -26,6 +26,6 @@ class RegisterController extends Controller {
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return redirect(route('login.index'))->with('status', trans('validation.registered'));
+        return redirect(route('login.index'))->with('status', __('message.registered'));
     }
 }

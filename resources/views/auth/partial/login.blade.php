@@ -1,17 +1,17 @@
 <div class="login">
   <form class="login-container auth" method="post" action="{{ route('login.authenticate') }}">
     @csrf
-    <h2 class="header">Đăng nhập</h2>
+    <h2 class="header">{{ __('layout.layout.login') }}</h2>
     <div class="typing-section">
       <div class="item">
-        <label for="username">Tên đăng nhập</label>
+        <label for="username">{{ __('layout.login.username') }}</label>
         <div class="input">
           <i class="fas fa-user"></i>
           <input type="text" name="username" id="username"/>
         </div>
       </div>
       <div class="item">
-        <label for="password">Mật khẩu</label>
+        <label for="password">{{ __('layout.login.password') }}</label>
         <div class="input">
           <i class="fas fa-lock"></i>
           <input type="password" name="password" id="password"/>
@@ -24,10 +24,10 @@
           @endforeach
         </ul>
       @endif
-      @if(\Illuminate\Support\Facades\Session::has('status'))
-        <p class="success">{{ \Illuminate\Support\Facades\Session::get('status') }}</p>
+      @if(session()->has('status'))
+        <p class="success">{{ session()->get('status') }}</p>
       @endif
-      <button type="submit" class="btn-submit">Đăng nhập</button>
+      <button type="submit" class="btn-submit">{{ __('layout.layout.login') }}</button>
     </div>
   </form>
 </div>

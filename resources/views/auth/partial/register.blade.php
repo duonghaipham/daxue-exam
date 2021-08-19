@@ -1,31 +1,31 @@
 <div class="register">
   <form class="register-container auth" method="post" action="{{ route('register.store') }}">
     @csrf
-    <h2 class="header">Đăng ký</h2>
+    <h2 class="header">{{ __('layout.layout.register') }}</h2>
     <div class="typing-section">
       <div class="item">
-        <label for="username">Tên đăng nhập</label>
+        <label for="username">{{ __('layout.login.username') }}</label>
         <div class="input">
           <i class="fas fa-user"></i>
           <input type="text" name="username" id="username" required/>
         </div>
       </div>
       <div class="item">
-        <label for="full-name">Họ tên</label>
+        <label for="full-name">{{ __('layout.register.name') }}</label>
         <div class="input">
           <i class="fas fa-minus"></i>
           <input type="text" name="full_name" id="full-name" required/>
         </div>
       </div>
       <div class="item">
-        <label for="password">Mật khẩu</label>
+        <label for="password">{{ __('layout.login.password') }}</label>
         <div class="input">
           <i class="fas fa-lock"></i>
           <input type="password" name="password" id="password" required/>
         </div>
       </div>
       <div class="item">
-        <label for="confirmed-password">Xác nhận mật khẩu</label>
+        <label for="confirmed-password">{{ __('layout.register.confirmed_password') }}</label>
         <div class="input">
           <i class="fas fa-lock"></i>
           <input type="password" name="confirmed_password" id="confirmed-password" required/>
@@ -38,7 +38,7 @@
           @endforeach
         </ul>
       @endif
-      <button type="submit" class="btn-submit">Đăng nhập</button>
+      <button type="submit" class="btn-submit">{{ __('layout.layout.register') }}</button>
     </div>
   </form>
 </div>

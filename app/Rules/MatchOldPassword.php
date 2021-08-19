@@ -33,6 +33,6 @@ class MatchOldPassword implements Rule {
      * @return string
      */
     public function message() {
-        return trans('validation.current_password');
+        return __('validation.password');
     }
 }

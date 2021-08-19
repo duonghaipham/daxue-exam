@@ -6,7 +6,7 @@
 
 @section('title')
   @parent
-  Đổi mật khẩu
+  @lang('layout.layout.change_password')
 @stop
 
 @section('main')

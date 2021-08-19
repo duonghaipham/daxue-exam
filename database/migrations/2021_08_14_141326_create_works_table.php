@@ -19,6 +19,7 @@ class CreateWorksTable extends Migration
             $table->unsignedBigInteger('attempt');
             $table->unsignedBigInteger('second');
             $table->unsignedSmallInteger('out_of')->default(0);
+            $table->dateTime('started_at');
             $table->timestamps();
             $table->primary(['user_id', 'exam_id', 'attempt']);
         });

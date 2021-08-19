@@ -22,8 +22,6 @@ class LoginController extends Controller {
             return redirect()->intended(route('home'));
         }
 
-        return back()->withErrors([
-            'username' => 'The provided credentials does not match our record.',
-        ]);
+        return back()->withErrors(['username' => __('auth.failed')]);
     }
 }
