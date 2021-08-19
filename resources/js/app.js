@@ -33,3 +33,7 @@ document.getElementById('btn-menu').addEventListener('click', event => {
     icon.innerHTML = '&#xf00d;';
   }
 });
+
+// Highlight the current language
+const language = document.documentElement.lang;
+document.getElementById(language + '-lang').classList.add('active-lang');

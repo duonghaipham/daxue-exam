@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Exam;
 use App\Models\Subject;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller {
     public function index() {
@@ -26,5 +27,10 @@ class HomeController extends Controller {
         }
 
         return view('index')->with('subjects', $subjects);
+    }
+
+    public function switch($lang) {
+        Session::put('locale', $lang);
+        return back();
     }
 }

@@ -25,7 +25,6 @@ class CreateUsersTable extends Migration {
             $table->string('school')->nullable();
             $table->string('class')->nullable();
             $table->string('city')->nullable();
-            $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

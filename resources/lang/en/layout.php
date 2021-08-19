@@ -3,6 +3,7 @@
 return [
     'layout' => [
         'change_password' => 'Change password',
+        'english' => 'English',
         'login' => 'Login',
         'logout' => 'Logout',
         'member' => 'Members',
@@ -11,6 +12,7 @@ return [
         'privacy_and_security' => 'Privacy and Security',
         'register' => 'Register',
         'terms_of_use' => 'Terms of Use',
+        'vietnamese' => 'Vietnamese',
     ],
     'home' => [
         'join' => 'Join now',

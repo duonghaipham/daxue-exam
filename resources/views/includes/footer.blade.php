@@ -1,12 +1,18 @@
 <div class="footer">
   <div class="footer-container">
-    <div class="contact">
-      <a href="https://www.facebook.com/duong.tyler"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="https://github.com/phduong2001"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/phduong2001"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.instagram.com/phduong2001"><i class="fab fa-instagram"></i></a>
-      <a href="mailto:haiduongzzz123@gmail.com"><i class="fas fa-envelope-open"></i></a>
+    <div class="functions">
+      <div class="contact">
+        <a href="https://www.facebook.com/duong.tyler"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://github.com/phduong2001"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/phduong2001"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/phduong2001"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:haiduongzzz123@gmail.com"><i class="fas fa-envelope-open"></i></a>
+      </div>
+      <div class="language">
+        <a href="{{ route('language.switch', 'vi') }}" id="vi-lang">{{ __('layout.layout.vietnamese') }}</a>
+        <a href="{{ route('language.switch', 'en') }}" id="en-lang">{{ __('layout.layout.english') }}</a>
+      </div>
     </div>
     <div class="info">
       <a href="#">{{ __('layout.layout.privacy_and_security') }}</a>

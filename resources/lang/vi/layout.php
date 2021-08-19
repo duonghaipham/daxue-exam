@@ -3,6 +3,7 @@
 return [
     'layout' => [
         'change_password' => 'Đổi mật khẩu',
+        'english' => 'Tiếng Anh',
         'login' => 'Đăng nhập',
         'logout' => 'Đăng xuất',
         'member' => 'Thành viên',
@@ -11,6 +12,7 @@ return [
         'privacy_and_security' => 'Bảo mật và riêng tư',
         'register' => 'Đăng ký',
         'terms_of_use' => 'Điều khoản dịch vụ',
+        'vietnamese' => 'Tiếng Việt',
     ],
     'home' => [
         'join' => 'Tham gia ngay',

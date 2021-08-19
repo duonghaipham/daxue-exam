@@ -23,6 +23,8 @@ use App\Http\Controllers\ExamController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/switch-language/{lang}', [HomeController::class, 'switch'])->name('language.switch');
+
 Route::group([
     'prefix' => 'register',
     'middleware' => 'guest'
