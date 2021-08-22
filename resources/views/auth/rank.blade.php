@@ -7,7 +7,7 @@
 
 @section('title')
   @parent
-  Xếp hạng thành viên
+  @lang('layout.layout.member')
 @stop
 
 @section('main')

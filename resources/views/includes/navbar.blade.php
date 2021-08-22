@@ -6,7 +6,7 @@
     </div>
     <div class="nav-right">
       <a class="nav-item" href="#">{{ __('layout.layout.practice') }}</a>
-      <a class="nav-item" href="#">{{ __('layout.layout.member') }}</a>
+      <a class="nav-item" href="{{ route('auth.ranking') }}">{{ __('layout.layout.member') }}</a>
       <a class="nav-item" href="#"><i class="fas fa-bell"></i></a>
       <div class="nav-btn-item">
         @auth

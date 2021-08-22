@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\ExamController;
+use App\Http\Controllers\Auth\RankingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,8 @@ Route::group([
 });
 
 Route::get('/subject/{id}', [SubjectController::class, 'index'])->name('subject.index')->middleware('auth');
+
+Route::get('/ranking', [RankingController::class, 'index'])->name('auth.ranking');
 
 Route::group([
     'prefix' => 'exam',

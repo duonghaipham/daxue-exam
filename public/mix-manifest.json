@@ -12,5 +12,6 @@
     "/css/exam_exceed.css": "/css/exam_exceed.css",
     "/css/exam_view.css": "/css/exam_view.css",
     "/css/exam_take.css": "/css/exam_take.css",
-    "/css/auth_view.css": "/css/auth_view.css"
+    "/css/auth_view.css": "/css/auth_view.css",
+    "/css/auth_rank.css": "/css/auth_rank.css"
 }

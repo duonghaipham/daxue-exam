@@ -49,6 +49,7 @@ return [
         'year_published' => 'Năm ra',
     ],
     'user' => [
+        'attempt' => 'Lượt làm bài',
         'city_or_province' => 'Tỉnh/thành phố',
         'class' => 'Lớp',
         'date_of_birth' => 'Ngày sinh',
@@ -59,6 +60,7 @@ return [
         'male' => 'Nam',
         'overview' => 'Tổng quan',
         'phone_number' => 'Số điện thoại',
+        'rank' => 'STT',
         'school' => 'Trường',
         'statistics' => 'Thống kê',
         'update' => 'Cập nhật',

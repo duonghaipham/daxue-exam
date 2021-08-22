@@ -36,7 +36,6 @@ class ExamController extends Controller {
             ->get();
 
         return view('exam.take')
-            ->with('work', $exam->users->find(Auth::id())->pivot)
             ->with('exam', $exam)
             ->with('additions', $additions);
     }

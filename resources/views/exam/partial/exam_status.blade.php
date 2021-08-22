@@ -14,7 +14,7 @@
         <li class="item"><span class="label">{{ __('layout.exam.time_limit') }}:</span> <span>{{ trans_choice('layout.exam.minute', $exam->minute_limit, ['minute' => $exam->minute_limit]) }}</span></li>
         <li class="item"><span class="label">{{ __('layout.exam.number_questions') }}:</span> <span>{{ $exam->questions->count() }}</span></li>
       </ul>
-      @if($exam->users->count() != 0)
+      @if($works->count() != 0)
         <table class="table-state">
           <tr>
             <th>{{ __('layout.exam.status') }}</th>
@@ -39,7 +39,7 @@
         </table>
       @endif
       @if($works->count() < $exam->attempt_limit && \Carbon\Carbon::now()->lessThan(\Carbon\Carbon::createFromTimeString($exam->closed_at)))
-        <a href="{{ route('exam.take', $exam->id) }}" class="btn-retry">{{ $exam->users->count() == 0 ? __('layout.exam.start') : __('layout.exam.retry') }}</a>
+        <a href="{{ route('exam.take', $exam->id) }}" class="btn-retry">{{ $works->count() == 0 ? __('layout.exam.start') : __('layout.exam.retry') }}</a>
       @endif
     </div>
   </div>

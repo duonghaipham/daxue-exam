@@ -49,6 +49,7 @@ return [
         'year_published' => 'Year published',
     ],
     'user' => [
+        'attempt' => 'Attempts',
         'city_or_province' => 'City/province',
         'class' => 'Class',
         'date_of_birth' => 'Date of birth',
@@ -59,6 +60,7 @@ return [
         'male' => 'Male',
         'overview' => 'Overview',
         'phone_number' => 'Phone number',
+        'rank' => 'Rank',
         'school' => 'School',
         'statistics' => 'Statistics',
         'update' => 'Update',
